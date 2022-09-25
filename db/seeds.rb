@@ -51,10 +51,20 @@ austin =  City.create(name: "Austin", state: tx)
 # Owners
 # ======
 john_smith = Owner.create(first_name: "John", last_name: "Smith", address: "12345 Main st", city: la, zipcode: 90210, phone: "3231234567", email: "jsmith@gmail.com")
+u1 = john_smith.id
+jane_doe = Owner.create(first_name: "Jane", last_name: "Doe", address: "22300 Lincoln st", city: riverside, zipcode: 92551, phone: "9513658987", email: "jdoe@gmail.com")
+u2 = jane_doe.id
+william_bate = Owner.create(first_name: "William", last_name: "Bate", address: "11234", city: riverside, zipcode: 92551, phone: "9513332258", email: "wbate@gmail.com")
+u3 = william_bate.id
 
 # Properties
 # ==========
 p25780 = Property.create(type: house, address: "25780 Rancho Lucero Dr, Moreno Valley", city: moreno_valley, zipcode: 92551, beds: 4, baths: 3, year_built: 1986, sq_ft: 1630, lot_size: 7405, foreclosure: false)
+
+# Property Owners
+# ===============
+PropertyOwner.create(property_id: p25780.id, owner_id: john_smith.id)
+PropertyOwner.create(property_id: p25780.id, owner_id: jane_doe.id)
 
 # ================================================
 puts "Seeding Finished!"
