@@ -3,11 +3,12 @@ Remove all records from the database
 Type.destroy_all
 State.destroy_all
 City.destroy_all
-Owner.destroy_all
 PropertyOwner.destroy_all
 UserProperty.destroy_all
 PropertyImage.destroy_all
 PropertySale.destroy_all
+Owner.destroy_all
+Property.destroy_all
 
 Rails generators
 ================

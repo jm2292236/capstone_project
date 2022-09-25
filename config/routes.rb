@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
-  resources :property_images
-  resources :property_sales
-  resources :property_owners
-  resources :user_properties
-  resources :properties
-  resources :owners
     # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  
+    
     # Defines the root path route ("/")
     # root "articles#index"
     
-    resources :cities
+    # resources :property_images
+    # resources :property_sales
+    # resources :property_owners
     resources :types
+    resources :states
+    resources :cities
+
+    resources :properties
+    resources :owners
+    # resources :user_properties
 
     # users controller
     get "/me", to: "users#show"

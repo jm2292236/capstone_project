@@ -10,6 +10,11 @@
 puts "Seeding the database..."
 # ================================================
 
+
+# ================================================
+# Admin User
+User.create(first_name: "Admin", last_name: "", username: "admin", admin: true)
+
 # ================================================
 # Types of properties
 house = Type.create(description: "House")
