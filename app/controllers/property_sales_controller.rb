@@ -1,0 +1,2 @@
+class PropertySalesController < ApplicationController
+end
