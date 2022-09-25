@@ -52,6 +52,10 @@ austin =  City.create(name: "Austin", state: tx)
 # ======
 john_smith = Owner.create(first_name: "John", last_name: "Smith", address: "12345 Main st", city: la, zipcode: 90210, phone: "3231234567", email: "jsmith@gmail.com")
 
+# Properties
+# ==========
+p25780 = Property.create(type: house, address: "25780 Rancho Lucero Dr, Moreno Valley", city: moreno_valley, zipcode: 92551, beds: 4, baths: 3, year_built: 1986, sq_ft: 1630, lot_size: 7405, foreclosure: false)
+
 # ================================================
 puts "Seeding Finished!"
 # ================================================

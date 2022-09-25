@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_25_003954) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_25_013618) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,28 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_003954) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "property_images", force: :cascade do |t|
+    t.integer "property_id"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "property_owners", force: :cascade do |t|
+    t.integer "property_id"
+    t.integer "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "property_sales", force: :cascade do |t|
+    t.integer "property_id"
+    t.date "sale_date"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.string "abbreviation"
@@ -63,6 +85,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_003954) do
 
   create_table "types", force: :cascade do |t|
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_properties", force: :cascade do |t|
+    t.integer "property_id"
+    t.integer "user_id"
+    t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

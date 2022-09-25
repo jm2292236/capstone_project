@@ -5,6 +5,7 @@ rails g resource Property type_id:integer address city_id:integer zipcode:intege
 rails g resource UserProperty property_id:integer user_id:integer notes --no-test-framework
 rails g resource PropertyOwner property_id:integer owner_id:integer --no-test-framework
 rails g resource PropertySale property_id:integer sale_date:date price:float --no-test-framework
+rails g resource PropertyImage property_id:integer image_url --no-test-framework
 
 rails g resource --no-test-framework
 
