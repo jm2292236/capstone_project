@@ -1,3 +1,14 @@
+Remove all records from the database
+====================================
+Type.destroy_all
+State.destroy_all
+City.destroy_all
+Owner.destroy_all
+PropertyOwner.destroy_all
+UserProperty.destroy_all
+PropertyImage.destroy_all
+PropertySale.destroy_all
+
 Rails generators
 ================
 rails g resource Owner first_name last_name address city_id:integer zipcode:integer phone email --no-test-framework
