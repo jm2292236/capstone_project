@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
     resources :properties
     resources :owners
-    # resources :user_properties
+    resources :user_properties
 
     # users controller
     get "/me", to: "users#show"
