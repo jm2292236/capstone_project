@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     # resources :property_images
     # resources :property_sales
     # resources :property_owners
+    resources :users
     resources :types
     resources :states
     resources :cities

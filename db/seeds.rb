@@ -64,7 +64,7 @@ u3 = william_bate.id
 
 # Properties
 # ==========
-p25780 = Property.create(type: house, address: "25780 Rancho Lucero Dr, Moreno Valley", city: moreno_valley, zipcode: 92551, beds: 4, baths: 3, year_built: 1986, sq_ft: 1630, lot_size: 7405, foreclosure: false)
+p25780 = Property.create(type: house, address: "25780 Rancho Lucero Dr", city: moreno_valley, zipcode: 92551, beds: 4, baths: 3, year_built: 1986, sq_ft: 1630, lot_size: 7405, foreclosure: false)
 
 # Property Owners
 # ===============
