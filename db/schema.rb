@@ -96,7 +96,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_013618) do
     t.string "last_name"
     t.string "username"
     t.string "password_digest"
-    t.integer "base_city_id"
+    t.integer "city_id"
     t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

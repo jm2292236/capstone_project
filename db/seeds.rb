@@ -12,8 +12,12 @@ puts "Seeding the database..."
 
 
 # ================================================
+# Users
+# =====
 # Admin User
-User.create(first_name: "Admin", last_name: "", username: "admin", admin: true)
+uAdmin = User.create(first_name: "Admin", last_name: "", username: "admin", admin: true)
+# regular user
+u1 = User.create(first_name: "Maria", last_name: "Hernandez", username: "mhernandez", admin: false)
 
 # ================================================
 # Types of properties
@@ -64,12 +68,21 @@ u3 = william_bate.id
 
 # Properties
 # ==========
-p25780 = Property.create(type: house, address: "25780 Rancho Lucero Dr", city: moreno_valley, zipcode: 92551, beds: 4, baths: 3, year_built: 1986, sq_ft: 1630, lot_size: 7405, foreclosure: false)
+p1 = Property.create(type: house, address: "25780 Rancho Lucero Dr", city: moreno_valley, zipcode: 92551, beds: 4, baths: 3, year_built: 1986, sq_ft: 1630, lot_size: 7405, foreclosure: false)
+p2 = Property.create(type: house, address: "115 E 88th Pl", city: la, zipcode: 92501, beds: 3, baths: 2, year_built: 1986, sq_ft: 1501, lot_size: 7405, foreclosure: false)
+p3 = Property.create(type: house, address: "504 Montecito Dr", city: la, zipcode: 92502, beds: 4, baths: 3, year_built: 1986, sq_ft: 1502, lot_size: 7405, foreclosure: false)
+p4 = Property.create(type: house, address: "1040 W 71st St", city: la, zipcode: 92503, beds: 4, baths: 3, year_built: 1986, sq_ft: 1503, lot_size: 7405, foreclosure: false)
+p5 = Property.create(type: house, address: "1036 W 67th St", city: la, zipcode: 92504, beds: 4, baths: 3, year_built: 1986, sq_ft: 1504, lot_size: 7405, foreclosure: false)
 
 # Property Owners
 # ===============
-PropertyOwner.create(property_id: p25780.id, owner_id: john_smith.id)
-PropertyOwner.create(property_id: p25780.id, owner_id: jane_doe.id)
+PropertyOwner.create(property_id: p1.id, owner_id: john_smith.id)
+PropertyOwner.create(property_id: p1.id, owner_id: jane_doe.id)
+
+# User Properties (My List)
+# ===============
+UserProperty.create(property_id: p1.id, user_id: u1.id, notes: "Property added today")
+UserProperty.create(property_id: p5.id, user_id: u1.id, notes: "Probably an easy deal!")
 
 # ================================================
 puts "Seeding Finished!"
