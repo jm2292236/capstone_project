@@ -12,6 +12,10 @@ Property.destroy_all
 
 Rails generators
 ================
+rails g resource User user_name password_digest first_name last_name city_id:integer admin:boolean --no-test-framework
+rails g resource Type description --no-test-framework
+rails g resource City name state_id:integer --no-test-framework
+rails g resource State name abbreviation --no-test-framework
 rails g resource Owner first_name last_name address city_id:integer zipcode:integer phone email --no-test-framework
 rails g resource Property type_id:integer address city_id:integer zipcode:integer beds:integer baths:integer year_built:integer sq_ft:integer lot_size:integer foreclosure:boolean --no-test-framework
 rails g resource UserProperty property_id:integer user_id:integer notes --no-test-framework

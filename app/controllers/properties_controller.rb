@@ -2,7 +2,8 @@ class PropertiesController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
     def index
-        render json: Property.all
+        properties = Property.all
+        render json: properties
     end
 
     def show

@@ -74,10 +74,24 @@ p3 = Property.create(type: house, address: "504 Montecito Dr", city: la, zipcode
 p4 = Property.create(type: house, address: "1040 W 71st St", city: la, zipcode: 92503, beds: 4, baths: 3, year_built: 1986, sq_ft: 1503, lot_size: 7405, foreclosure: false)
 p5 = Property.create(type: house, address: "1036 W 67th St", city: la, zipcode: 92504, beds: 4, baths: 3, year_built: 1986, sq_ft: 1504, lot_size: 7405, foreclosure: false)
 
+# Property Images
+# ===============
+PropertyImage.create(property_id: p1.id, image_url: "https://ssl.cdn-redfin.com/photo/45/mbphoto/928/genMid.OC22191928_3_1.jpg")
+PropertyImage.create(property_id: p1.id, image_url: "https://ssl.cdn-redfin.com/photo/45/mbphoto/928/genMid.OC22191928_2_1.jpg")
+PropertyImage.create(property_id: p1.id, image_url: "https://ssl.cdn-redfin.com/photo/45/mbphoto/928/genMid.OC22191928_11_1.jpg")
+
+PropertyImage.create(property_id: p2.id, image_url: "https://ssl.cdn-redfin.com/photo/40/bcsphoto/737/genBcs.22-183737_0.jpg")
+PropertyImage.create(property_id: p2.id, image_url: "https://ssl.cdn-redfin.com/photo/40/bcsphoto/737/genBcs.22-183737_13_0.jpg")
+PropertyImage.create(property_id: p2.id, image_url: "https://ssl.cdn-redfin.com/photo/40/mbphoto/737/genMid.22-183737_8_0.jpg")
+
 # Property Owners
 # ===============
 PropertyOwner.create(property_id: p1.id, owner_id: john_smith.id)
 PropertyOwner.create(property_id: p1.id, owner_id: jane_doe.id)
+
+# Property Owners
+# ===============
+PropertySale.create(property_id: p1.id, sale_date: "19900101", price: 350000)
 
 # User Properties (My List)
 # ===============
