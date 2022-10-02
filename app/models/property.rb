@@ -6,8 +6,8 @@ class Property < ApplicationRecord
     has_many :property_owners
     has_many :owners, through: :property_owners
 
-    has_many :user_properties
-    has_many :users, through: :user_properties
+    # has_many :user_properties
+    # has_many :users, through: :user_properties
 
     has_many :property_sales
     has_many :property_images
