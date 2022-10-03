@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Property({userList, property}) {
-    console.table(property)
     return (
         <div>
             <h2>{property.address}</h2>

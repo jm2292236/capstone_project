@@ -18,6 +18,8 @@ puts "Seeding the database..."
 uAdmin = User.create(first_name: "Admin", last_name: "", username: "admin", admin: true)
 # regular user
 u1 = User.create(first_name: "Maria", last_name: "Hernandez", username: "mhernandez", admin: false)
+u2 = User.create(first_name: "Sebastian", last_name: "Harland", username: "sharland", admin: false)
+u3 = User.create(first_name: "George", last_name: "Finley", username: "gfinley", admin: false)
 
 # ================================================
 # Types of properties
@@ -97,6 +99,8 @@ PropertySale.create(property_id: p1.id, sale_date: "19900101", price: 350000)
 # ===============
 UserProperty.create(property_id: p1.id, user_id: u1.id, notes: "Property added today")
 UserProperty.create(property_id: p5.id, user_id: u1.id, notes: "Probably an easy deal!")
+
+UserProperty.create(property_id: p3.id, user_id: u3.id, notes: "Owner recently moved out, probably they want to sell")
 
 # ================================================
 puts "Seeding Finished!"
