@@ -23,6 +23,8 @@ module CapstoneProject
 
     # ###########################################################
     # Necessary code to be added for cookies and sessions to work: START
+    # This code is added because when we create the Rails app with --api
+    # it is not included
     # ###########################################################
     
     # Adding cookies and session middleware
