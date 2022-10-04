@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-function Filter({ foreclosure, handleChange, city, handleChangeCity}) {
+function Filter({ foreclosure, handleChangeFC, city, handleChangeCity}) {
     const [cities, setCities] = useState([])
 
     useEffect(() => {
         getCities()
-    }, []);    
+    }, []);
     
     async function getCities() {
         const resp = await fetch("/cities")
@@ -16,15 +16,16 @@ function Filter({ foreclosure, handleChange, city, handleChangeCity}) {
     }
     return (
         <div>
-            <select className="select-city" name="city" value={city} onChange={handleChangeCity}  >  
+            <select className="select-city" name="city" value={city} onChange={() => handleChangeCity()}  >  
                 <option>Select City</option>  
-                {cities.map((city, key) => {  
+                {cities.map((city, key) => {
+                    console.log(city.id)
                     return <option key={key} value={city.id}>{city.name}</option>;  
                 })}
             </select>
 
             <label>
-                <input type="checkbox" checked={foreclosure} onChange={handleChange}/>
+                <input type="checkbox" checked={foreclosure} onChange={handleChangeFC}/>
                 Foreclosures Only
             </label>
         </div>

@@ -42,6 +42,12 @@ img {
   margin: 0 auto;
 }
 
+.filter-container {
+    max-width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
 .property-container {
     border-bottom: solid 5px red;
 }

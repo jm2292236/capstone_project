@@ -5,6 +5,7 @@ import Property from './Property';
 function Lookup() {
     const [properties, setProperties] = useState([])
     const [foreclosure, setForeclosure] = useState(false)
+    const [city, setCity] = useState(0)
 
     useEffect(() => {
         getProperties()
@@ -18,13 +19,23 @@ function Lookup() {
         }
     }
 
-    const handleChange = () => {
+    function handleChangeCity() {
+        console.log(city)
+        // setCity(city)
+    }
+
+    const handleChangeFC  = () => {
         setForeclosure(!foreclosure)
     }
 
     return (
         <div className='content'>
-            <Filter foreclosure={foreclosure} handleChange={handleChange}/>
+            <div className='filter-container'>
+                <Filter 
+                    foreclosure={foreclosure} handleChangeFC={handleChangeFC}
+                    city={city} handleChangeCity={handleChangeCity}
+                />
+            </div>
             
             {properties.length > 0 ? (
                 properties.map((property) => (
