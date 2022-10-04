@@ -39,11 +39,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_013618) do
     t.integer "city_id"
     t.integer "zipcode"
     t.integer "beds"
-    t.integer "baths"
+    t.float "baths"
     t.integer "year_built"
     t.integer "sq_ft"
     t.integer "lot_size"
     t.boolean "foreclosure"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

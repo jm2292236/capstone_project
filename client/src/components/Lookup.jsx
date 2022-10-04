@@ -5,7 +5,7 @@ import Property from './Property';
 function Lookup() {
     const [properties, setProperties] = useState([])
     const [foreclosure, setForeclosure] = useState(false)
-    const [city, setCity] = useState(0)
+    const [city, setCity] = useState(1)
 
     useEffect(() => {
         getProperties()

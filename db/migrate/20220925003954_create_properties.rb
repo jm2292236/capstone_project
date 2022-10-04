@@ -6,11 +6,12 @@ class CreateProperties < ActiveRecord::Migration[7.0]
       t.integer :city_id
       t.integer :zipcode
       t.integer :beds
-      t.integer :baths
+      t.float :baths
       t.integer :year_built
       t.integer :sq_ft
       t.integer :lot_size
       t.boolean :foreclosure
+      t.string :image_url
 
       t.timestamps
     end
