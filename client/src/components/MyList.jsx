@@ -13,7 +13,6 @@ function MyList() {
         const data = await resp.json()
         if (resp.ok) {
             setProperties(data)
-            console.table(data)
         }
     }
 

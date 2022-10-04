@@ -13,7 +13,6 @@ function Lookup() {
         const data = await resp.json()
         if (resp.ok) {
             setProperties(data)
-            console.table(data)
         }
     }
 
@@ -25,7 +24,7 @@ function Lookup() {
                 ))
             ) : (
                 <>
-                    <h2>No Properties Found</h2>
+                    <h2>Data not Found</h2>
                 </>
             )}
         </div>
