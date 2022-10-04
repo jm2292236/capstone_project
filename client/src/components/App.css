@@ -43,7 +43,7 @@ img {
 }
 
 .property-container {
-    border: solid red;
+    border-bottom: solid 5px red;
 }
 
 .property-top {
@@ -53,11 +53,15 @@ img {
 
 .property-images {
     display: flex;
-    border: solid green;
 }
 
 .property-img {
     width: 300px;
     height: 300px;
     padding: 10px;   
+}
+
+.foreclosure-text {
+    background-color: red;
+    color: white;
 }

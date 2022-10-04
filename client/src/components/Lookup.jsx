@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import Filter from './Filter';
 import Property from './Property';
 
 function Lookup() {
     const [properties, setProperties] = useState([])
+    const [foreclosure, setForeclosure] = useState(false)
 
     useEffect(() => {
         getProperties()
@@ -16,8 +18,14 @@ function Lookup() {
         }
     }
 
+    const handleChange = () => {
+        setForeclosure(!foreclosure)
+    }
+
     return (
         <div className='content'>
+            <Filter foreclosure={foreclosure} handleChange={handleChange}/>
+            
             {properties.length > 0 ? (
                 properties.map((property) => (
                     <Property key={property.id} property={property}/>
