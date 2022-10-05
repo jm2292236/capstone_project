@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :memberships
     # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
     
     # Defines the root path route ("/")
@@ -9,11 +8,13 @@ Rails.application.routes.draw do
     resources :types
     resources :states
     resources :cities
-
+    
     resources :properties
     resources :owners
     resources :user_properties
-
+    
+    resources :memberships
+    
     # users controller
     get "/me", to: "users#show"
     post "/signup", to: "users#create"

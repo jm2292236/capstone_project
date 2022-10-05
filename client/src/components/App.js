@@ -10,6 +10,7 @@ import MyList from "./MyList";
 import MyProfile from "./MyProfile";
 import Error from "./Error";
 import Login from "./Login";
+import Pricing from "./Pricing";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -42,7 +43,7 @@ function App() {
 
                 <Link to="/home">Home</Link>
                 <Link to="/lookup">Lookup</Link>
-                <Link to="/list">My List</Link>
+                <Link to="/pricing">Pricing</Link>
                 <Link to="/profile">My Profile</Link>
                 {user.admin ? 
                     <Link to="/admin">Admin</Link>
@@ -57,7 +58,7 @@ function App() {
             <Routes>
                 <Route path="/home" element={<Home />} />
                 <Route path="/lookup" element={<Lookup />} />
-                <Route path="/list" element={<MyList />} />
+                <Route path="/pricing" element={<Pricing />} />
                 <Route path="/profile" element={<MyProfile user={user} onUpdate={setUser} />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/*" element={<Error />} />

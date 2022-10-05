@@ -64,10 +64,15 @@ img {
 .property-img {
     width: 300px;
     height: 300px;
-    padding: 10px;   
+    padding: 10px;
 }
 
 .foreclosure-text {
     background-color: red;
     color: white;
+}
+
+.admin-navbar {
+    display: flex;
+    justify-content: space-evenly;
 }

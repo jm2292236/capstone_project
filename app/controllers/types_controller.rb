@@ -31,7 +31,7 @@ class TypesController < ApplicationController
     end
 
     def render_not_found_response
-        render json: {error: "Post not found"}, status: :not_found
+        render json: {error: "Type not found"}, status: :not_found
     end
 
     def render_unprocessable_entity_response(invalid)

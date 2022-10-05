@@ -9,7 +9,7 @@ Made with Ruby on Rails and React JS
 
 
 Entity Relationship Diagram:
-https://lucid.app/lucidchart/09fdec3d-ad3c-4179-b97f-4472c90f45b6/edit?page=0_0&invitationId=inv_483c3bb2-7b63-4b63-8e56-96990436ef80#
+[(https://lucid.app/lucidchart/09fdec3d-ad3c-4179-b97f-4472c90f45b6/edit?page=0_0&invitationId=inv_483c3bb2-7b63-4b63-8e56-96990436ef80#)]
 
 
 **Minimum Requirements**
@@ -24,6 +24,7 @@ https://lucid.app/lucidchart/09fdec3d-ad3c-4179-b97f-4472c90f45b6/edit?page=0_0&
 * Implement _useContext or Redux_.
 * **_Fully deploy and host your project_**.
 
+Currently deployed at this link: [(https://fathomless-wave-00182.herokuapp.com/)]
 
 
 

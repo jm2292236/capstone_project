@@ -163,6 +163,14 @@ UserProperty.create(property_id: 5, user_id: 2, notes: "Probably an easy deal!")
 
 UserProperty.create(property_id: 3, user_id: 4, notes: "Owner recently moved out, probably they want to sell")
 
+# ========================================================================
+# Memberships
+# ===============
+puts "Memberships..."
+Membership.create(description: "Essential", billed_monthly: true, nationwide_lookup: true, owner_details: false, price: 30)
+Membership.create(description: "Annual", billed_monthly: false, nationwide_lookup: true, owner_details: false, price: 300)
+Membership.create(description: "Complete", billed_monthly: true, nationwide_lookup: true, owner_details: true, price: 50)
+
 # ================================================
 puts "Seeding Finished!"
 # ================================================
