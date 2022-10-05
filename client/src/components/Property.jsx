@@ -20,7 +20,7 @@ function Property({userList, property}) {
             </div>
             <div className='property-images'>
                 {property.property_images.map((ppty, key) => (
-                    <img className='property-img' key={key} src={ppty.image_url}></img>
+                    <img className='property-img' key={key} src={ppty.image_url} alt="Property"></img>
                 ))}
             </div>
 

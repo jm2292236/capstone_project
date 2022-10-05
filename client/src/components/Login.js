@@ -6,7 +6,7 @@ import { Button } from "../styles";
 
 function Login({ onLogin }) {
     const [showLogin, setShowLogin] = useState(true);
-    
+
     return (
         <Wrapper>
         {/* <Logo>AppLogo</Logo> */}
@@ -28,7 +28,7 @@ function Login({ onLogin }) {
             <p>
                 Already have an account? &nbsp;
                 <Button color="secondary" onClick={() => setShowLogin(true)}>
-                Log In
+                    Log In
                 </Button>
             </p>
             </>
