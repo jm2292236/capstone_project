@@ -34,6 +34,7 @@ function MyProfile({ user, onUpdate }) {
     }
 
     return (
+        <div className='content'>
         <form onSubmit={handleSubmit}>
         <FormField>
             <Label htmlFor="firstName">First name</Label>
@@ -87,6 +88,7 @@ function MyProfile({ user, onUpdate }) {
             ))}
         </FormField>
         </form>
+        </div>
     )
 }
 

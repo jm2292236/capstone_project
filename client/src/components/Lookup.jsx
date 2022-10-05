@@ -19,11 +19,6 @@ function Lookup() {
         }
     }
 
-    function handleChangeCity() {
-        console.log(city)
-        // setCity(city)
-    }
-
     const handleChangeFC  = () => {
         setForeclosure(!foreclosure)
     }
@@ -33,7 +28,7 @@ function Lookup() {
             <div className='filter-container'>
                 <Filter 
                     foreclosure={foreclosure} handleChangeFC={handleChangeFC}
-                    city={city} handleChangeCity={handleChangeCity}
+                    city={city} handleChangeCity={setCity}
                 />
             </div>
             

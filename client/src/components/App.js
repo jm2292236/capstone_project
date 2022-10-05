@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
 import "./App.css"
 import { Button } from "../styles";
 
@@ -13,6 +13,7 @@ import Login from "./Login";
 
 function App() {
     const [user, setUser] = useState(null);
+    const navigate = useNavigate()
 
     useEffect(() => {
         // auto-login
@@ -24,6 +25,7 @@ function App() {
     }, []);
 
     if (!user) return <Login onLogin={setUser} />;
+    // navigate('/home')
   
     function handleLogoutClick() {
         fetch("/logout", { method: "DELETE" }).then((r) => {
@@ -33,37 +35,34 @@ function App() {
         });
       }
 
-    {console.log(user.admin)}
     return (        
-        <BrowserRouter>
-            <div className="App">
-                <nav>
-                    <h1>Property Finder</h1>
+        <div className="App">
+            <nav>
+                <h1>Property Finder</h1>
 
-                    <Link to="/">Home</Link>
-                    <Link to="/lookup">Lookup</Link>
-                    <Link to="/list">My List</Link>
-                    <Link to="/profile">My Profile</Link>
-                    {user.admin ? 
-                        <Link to="/admin">Admin</Link>
-                        :
-                        ""
-                    }
-                    <Button variant="outline" onClick={handleLogoutClick}>
-                        Logout
-                    </Button>
-                </nav>
+                <Link to="/home">Home</Link>
+                <Link to="/lookup">Lookup</Link>
+                <Link to="/list">My List</Link>
+                <Link to="/profile">My Profile</Link>
+                {user.admin ? 
+                    <Link to="/admin">Admin</Link>
+                    :
+                    ""
+                }
+                <Button variant="outline" onClick={handleLogoutClick}>
+                    Logout
+                </Button>
+            </nav>
 
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/lookup" element={<Lookup />} />
-                    <Route path="/list" element={<MyList />} />
-                    <Route path="/profile" element={<MyProfile user={user} onUpdate={setUser} />} />
-                    <Route path="/admin" element={<Admin />} />
-                    <Route path="/*" element={<Error />} />
-                </Routes>
-            </div>
-        </BrowserRouter>
+            <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/lookup" element={<Lookup />} />
+                <Route path="/list" element={<MyList />} />
+                <Route path="/profile" element={<MyProfile user={user} onUpdate={setUser} />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/*" element={<Error />} />
+            </Routes>
+        </div>
     );
 }
 

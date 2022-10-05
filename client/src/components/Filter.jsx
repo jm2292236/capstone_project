@@ -16,10 +16,9 @@ function Filter({ foreclosure, handleChangeFC, city, handleChangeCity}) {
     }
     return (
         <div>
-            <select className="select-city" name="city" value={city} onChange={handleChangeCity}>
+            <select className="select-city" name="city" value={city} onChange={(e) => handleChangeCity(e.target.value)}>
                 <option>Select City</option>  
                 {cities.map((city, key) => {
-                    console.log(city.id)
                     return <option key={key} value={city.id}>{city.name}</option>;  
                 })}
             </select>
