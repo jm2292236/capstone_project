@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def show
-        # user = User.find_by(id: 1)  # temporary to show the profile...
         user = User.find_by(id: session[:user_id])
         if user
             render json: user
@@ -36,7 +35,7 @@ class UsersController < ApplicationController
     end
 
     def render_not_found_response
-        render json: {error: "Post not found"}, status: :not_found
+        render json: {error: "User not found"}, status: :not_found
     end
 
     def render_unprocessable_entity_response(invalid)

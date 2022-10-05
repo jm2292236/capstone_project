@@ -1,8 +1,34 @@
 class CitiesController < ApplicationController
-
+    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+    
     def index
         cities = City.all
         render json: cities, include: ["state"]
+    end
+    
+    def create
+        city = City.create!(city_params)
+        render json: city, status: :created
+    end
+
+    def destroy
+        city = City.find(params[:id])
+        city.destroy
+    end
+
+    private
+
+    def city_params
+        params.permit(:name, :state_id)
+    end
+
+    def render_not_found_response
+        render json: {error: "Post not found"}, status: :not_found
+    end
+
+    def render_unprocessable_entity_response(invalid)
+        render json: {errors: invalid.record.errors.messages}, status: :unprocessable_entity
     end
 
 end

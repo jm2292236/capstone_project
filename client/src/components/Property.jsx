@@ -1,4 +1,10 @@
 import React from 'react'
+import PropertyDetail from './PropertyDetail'
+
+function handleSeeDetails() {
+    console.log("property details...")
+    PropertyDetail()
+}
 
 function Property({userList, property}) {
     return (
@@ -14,9 +20,9 @@ function Property({userList, property}) {
                     </p>
                     <p>Year Built: {property.year_built} | {property.sq_ft} Sq Ft | {property.lot_size} Lot size</p>
                 </div>
-                {/* <div className='property-button'>
-                    <button>Add/Remove from my List</button>
-                </div> */}
+                <div className='owners-button'>
+                    <button onClick={handleSeeDetails}>See details</button>
+                </div>
             </div>
             <div className='property-images'>
                 {property.property_images.map((ppty, key) => (
