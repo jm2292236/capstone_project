@@ -34,8 +34,7 @@ function MyProfile({ user, onUpdate }) {
     }
 
     return (
-        <div className='content'>
-        <form onSubmit={handleSubmit}>
+        <form className='content' onSubmit={handleSubmit}>
         <FormField>
             <Label htmlFor="firstName">First name</Label>
             <Input
@@ -84,11 +83,10 @@ function MyProfile({ user, onUpdate }) {
 
         <FormField>
             {errors.map((err) => (
-            <Error key={err}>{err}</Error>
+                <Error key={err}>{err}</Error>
             ))}
         </FormField>
         </form>
-        </div>
     )
 }
 

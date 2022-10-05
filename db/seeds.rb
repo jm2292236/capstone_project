@@ -77,6 +77,9 @@ p8c = Property.create(type: condo, address: "25890 Iris Ave Unit B", city: moren
 p9mh = Property.create(type: mobile, address: "1803 Quanah Parker Trl", city: austin, zipcode: 78734, beds: 3, baths: 2, year_built: 1999, sq_ft: 1792, lot_size: 9060, foreclosure: true, 
     image_url: "https://ssl.cdn-redfin.com/photo/92/bcsphoto/575/genBcs.6914575_0.jpg")
 
+p10c = Property.create(type: condo, address: "60 E 55th St Unit 40-B", city: ny, zipcode: 10022, beds: 2, baths: 2, year_built: 2004, sq_ft: 1272, lot_size: 8636, foreclosure: false, 
+    image_url: "https://ssl.cdn-redfin.com/photo/211/bcsphoto/328/genBcs.OLRS-0001298328_0.jpg")
+
 # ========================================================================
 # Property Images
 # ===============
@@ -118,6 +121,10 @@ PropertyImage.create(property_id: p9mh.id, image_url: "https://ssl.cdn-redfin.co
 PropertyImage.create(property_id: p9mh.id, image_url: "https://ssl.cdn-redfin.com/photo/92/mbphoto/575/genMid.6914575_2_0.jpg")
 PropertyImage.create(property_id: p9mh.id, image_url: "https://ssl.cdn-redfin.com/photo/92/bcsphoto/575/genBcs.6914575_4_0.jpg")
 PropertyImage.create(property_id: p9mh.id, image_url: "https://ssl.cdn-redfin.com/photo/92/mbphoto/575/genMid.6914575_5_0.jpg")
+
+PropertyImage.create(property_id: p10c.id, image_url: "https://ssl.cdn-redfin.com/photo/211/bcsphoto/328/genBcs.OLRS-0001298328_1_0.jpg")
+PropertyImage.create(property_id: p10c.id, image_url: "https://ssl.cdn-redfin.com/photo/211/bcsphoto/328/genBcs.OLRS-0001298328_4_0.jpg")
+PropertyImage.create(property_id: p10c.id, image_url: "https://ssl.cdn-redfin.com/photo/211/mbphoto/328/genMid.OLRS-0001298328_5_0.jpg")
 
 # ========================================================================
 # Owners

@@ -5,7 +5,7 @@ import Property from './Property';
 function Lookup() {
     const [properties, setProperties] = useState([])
     const [foreclosure, setForeclosure] = useState(false)
-    const [city, setCity] = useState(1)
+    const [city, setCity] = useState("All")
 
     useEffect(() => {
         getProperties()
@@ -23,24 +23,32 @@ function Lookup() {
         setForeclosure(!foreclosure)
     }
 
+    const propertiesToDisplay = properties.filter(property => {
+        if (city === "All") {
+            return true;
+        } else if (foreclosure) {
+            return property.city_id == city && property.foreclosure;
+        } else {
+            return property.city_id == city
+        }
+    });
+
     return (
         <div className='content'>
-            <div className='filter-container'>
-                <Filter 
-                    foreclosure={foreclosure} handleChangeFC={handleChangeFC}
-                    city={city} handleChangeCity={setCity}
-                />
-            </div>
-            
+            <Filter 
+                foreclosure={foreclosure} handleChangeFC={handleChangeFC}
+                city={city} handleChangeCity={setCity}
+            />
+
             {properties.length > 0 ? (
-                properties.map((property) => (
+                propertiesToDisplay.map((property) => (
                     <Property key={property.id} property={property}/>
                 ))
-            ) : (
+            ) : 
                 <>
                     <h2>Data not Found</h2>
                 </>
-            )}
+            }        
         </div>
     )
 }

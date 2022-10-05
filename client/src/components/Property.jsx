@@ -14,9 +14,9 @@ function Property({userList, property}) {
                     </p>
                     <p>Year Built: {property.year_built} | {property.sq_ft} Sq Ft | {property.lot_size} Lot size</p>
                 </div>
-                <div className='property-button'>
+                {/* <div className='property-button'>
                     <button>Add/Remove from my List</button>
-                </div>
+                </div> */}
             </div>
             <div className='property-images'>
                 {property.property_images.map((ppty, key) => (
