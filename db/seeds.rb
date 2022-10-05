@@ -15,9 +15,6 @@ puts "Seeding the database..."
 # Users
 # =====
 puts "Users..."
-# Admin User
-uAdmin = User.create(first_name: "Admin", last_name: "", username: "admin", admin: true)
-# regular user
 u1 = User.create(first_name: "Maria", last_name: "Hernandez", username: "mhernandez", admin: false)
 u2 = User.create(first_name: "Sebastian", last_name: "Harland", username: "sharland", admin: false)
 u3 = User.create(first_name: "George", last_name: "Finley", username: "gfinley", admin: false)

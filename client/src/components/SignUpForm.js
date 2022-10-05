@@ -14,6 +14,11 @@ function SignUpForm({ onLogin }) {
         e.preventDefault();
         setErrors([]);
         setIsLoading(true);
+
+        let admin = false
+        if (username === "Admin") {
+            admin = true
+        }
         fetch("/signup", {
             method: "POST",
             headers: {
@@ -25,6 +30,7 @@ function SignUpForm({ onLogin }) {
                 username,
                 password,
                 password_confirmation: passwordConfirmation,
+                admin,
             })
         }).then((r) => {
             setIsLoading(false);
@@ -59,12 +65,12 @@ function SignUpForm({ onLogin }) {
         </FormField>
         
         {/* <FormField>
-            <Label htmlFor="lastName">Bio</Label>
+            <Label htmlFor="lastName">Last name</Label>
             <Textarea
             rows="3"
-            id="bio"
-            value={bio}
-            onChange={(e) => setBio(e.target.value)}
+            id="lastName"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             />
         </FormField> */}
 
