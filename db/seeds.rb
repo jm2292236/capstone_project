@@ -12,14 +12,6 @@ puts "Seeding the database..."
 
 
 # ================================================
-# Users
-# =====
-puts "Users..."
-u1 = User.create(first_name: "Maria", last_name: "Hernandez", username: "mhernandez", admin: false)
-u2 = User.create(first_name: "Sebastian", last_name: "Harland", username: "sharland", admin: false)
-u3 = User.create(first_name: "George", last_name: "Finley", username: "gfinley", admin: false)
-
-# ================================================
 # Types of properties
 # ===================
 puts "Property types..."
@@ -62,16 +54,6 @@ dallas =  City.create(name: "Dallas", state: tx)
 austin =  City.create(name: "Austin", state: tx)
 
 # ========================================================================
-# Owners
-# ======
-puts "Owners..."
-john_smith = Owner.create(first_name: "John", last_name: "Smith", address: "12345 Main st", city: la, zipcode: 90210, phone: "3231234567", email: "jsmith@gmail.com")
-u1 = john_smith.id
-jane_doe = Owner.create(first_name: "Jane", last_name: "Doe", address: "22300 Lincoln st", city: riverside, zipcode: 92551, phone: "9513658987", email: "jdoe@gmail.com")
-u2 = jane_doe.id
-william_bate = Owner.create(first_name: "William", last_name: "Bate", address: "11234", city: riverside, zipcode: 92551, phone: "9513332258", email: "wbate@gmail.com")
-u3 = william_bate.id
-
 # Properties
 # ==========
 puts "Properties..."
@@ -95,6 +77,7 @@ p8c = Property.create(type: condo, address: "25890 Iris Ave Unit B", city: moren
 p9mh = Property.create(type: mobile, address: "1803 Quanah Parker Trl", city: austin, zipcode: 78734, beds: 3, baths: 2, year_built: 1999, sq_ft: 1792, lot_size: 9060, foreclosure: true, 
     image_url: "https://ssl.cdn-redfin.com/photo/92/bcsphoto/575/genBcs.6914575_0.jpg")
 
+# ========================================================================
 # Property Images
 # ===============
 puts "Property images..."
@@ -136,18 +119,35 @@ PropertyImage.create(property_id: p9mh.id, image_url: "https://ssl.cdn-redfin.co
 PropertyImage.create(property_id: p9mh.id, image_url: "https://ssl.cdn-redfin.com/photo/92/bcsphoto/575/genBcs.6914575_4_0.jpg")
 PropertyImage.create(property_id: p9mh.id, image_url: "https://ssl.cdn-redfin.com/photo/92/mbphoto/575/genMid.6914575_5_0.jpg")
 
+# ========================================================================
+# Owners
+# ======
+puts "Owners..."
+john_smith = Owner.create(first_name: "John", last_name: "Smith", address: "12345 Main st", city: la, zipcode: 90210, phone: "3231234567", email: "jsmith@gmail.com")
+jane_doe = Owner.create(first_name: "Jane", last_name: "Doe", address: "22300 Lincoln st", city: riverside, zipcode: 92551, phone: "9513658987", email: "jdoe@gmail.com")
+william_bate = Owner.create(first_name: "William", last_name: "Bate", address: "11234", city: riverside, zipcode: 92551, phone: "9513332258", email: "wbate@gmail.com")
 
+# ========================================================================
 # Property Owners
 # ===============
 puts "Property owners..."
+# Many-to-many relationship
+# A property can have one or more owners
 PropertyOwner.create(property_id: p1.id, owner_id: john_smith.id)
 PropertyOwner.create(property_id: p1.id, owner_id: jane_doe.id)
 
+# An owner can have one or more properties
+PropertyOwner.create(property_id: p2.id, owner_id: william_bate.id)
+PropertyOwner.create(property_id: p3.id, owner_id: william_bate.id)
+PropertyOwner.create(property_id: p4.id, owner_id: william_bate.id)
+
+# ========================================================================
 # Property Sales
-# ===============
+# ==============
 puts "Property sales..."
 PropertySale.create(property_id: p1.id, sale_date: "19900101", price: 350000)
 
+# ========================================================================
 # User Properties (My List)
 # ===============
 puts "User properties..."
