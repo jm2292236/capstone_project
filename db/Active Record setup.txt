@@ -23,6 +23,12 @@ rails g resource PropertyOwner property_id:integer owner_id:integer --no-test-fr
 rails g resource PropertySale property_id:integer sale_date:date price:float --no-test-framework
 rails g resource PropertyImage property_id:integer image_url --no-test-framework
 
+// Membership model
+    - billed_monthly: Recurrence of payment: montly or anually
+    - nation_wide_lookup: Lookup a property or owner nationwide
+    - owner_details: View and export Owner phones & emails
+rails g resource Membership description billed_monthly:boolean nationwide_lookup:boolean owner_details:boolean price:float --no-test-framework
+
 rails g resource --no-test-framework
 
 
