@@ -10,7 +10,6 @@ import MyList from "./MyList";
 import MyProfile from "./MyProfile";
 import Error from "./Error";
 import Login from "./Login";
-import Logout from "./Logout";
 
 function App() {
     const [user, setUser] = useState(null);
