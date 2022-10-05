@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import "./App.css"
 import { Button } from "../styles";
 
 import Admin from "./Admin";
-import Home from "./Home";
 import Lookup from "./Lookup";
-import MyList from "./MyList";
 import MyProfile from "./MyProfile";
 import Error from "./Error";
 import Login from "./Login";
 import Pricing from "./Pricing";
+import OwnerList from "./OwnerList";
+import FAQList from "./FAQList";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -41,9 +41,10 @@ function App() {
             <nav>
                 <h1>Property Finder</h1>
 
-                <Link to="/home">Home</Link>
-                <Link to="/lookup">Lookup</Link>
+                <Link to="/home">Properties</Link>
+                <Link to="/owners">Owners</Link>
                 <Link to="/pricing">Pricing</Link>
+                <Link to="/faq">FAQ</Link>
                 <Link to="/profile">My Profile</Link>
                 {user.admin ? 
                     <Link to="/admin">Admin</Link>
@@ -56,9 +57,10 @@ function App() {
             </nav>
 
             <Routes>
-                <Route path="/home" element={<Home />} />
-                <Route path="/lookup" element={<Lookup />} />
+                <Route path="/home" element={<Lookup />} />
+                <Route path="/owners" element={<OwnerList />} />
                 <Route path="/pricing" element={<Pricing />} />
+                <Route path="/faq" element={<FAQList />} />
                 <Route path="/profile" element={<MyProfile user={user} onUpdate={setUser} />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/*" element={<Error />} />
