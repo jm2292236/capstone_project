@@ -4,9 +4,6 @@ Rails.application.routes.draw do
     # Defines the root path route ("/")
     # root "articles#index"
     
-    # resources :property_images
-    # resources :property_sales
-    # resources :property_owners
     resources :users
     resources :types
     resources :states

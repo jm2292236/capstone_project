@@ -27,13 +27,14 @@ function App() {
   
     function handleLogoutClick() {
         fetch("/logout", { method: "DELETE" }).then((r) => {
-          if (r.ok) {
-            setUser(null);
-          }
+            if (r.ok) {
+                setUser(null);
+            }
         });
       }
 
-    return (
+    {console.log(user.admin)}
+    return (        
         <BrowserRouter>
             <div className="App">
                 <nav>
@@ -43,7 +44,11 @@ function App() {
                     <Link to="/lookup">Lookup</Link>
                     <Link to="/list">My List</Link>
                     <Link to="/profile">My Profile</Link>
-                    <Link to="/admin">Admin</Link>
+                    {user.admin ? 
+                        <Link to="/admin">Admin</Link>
+                        :
+                        ""
+                    }
                     <Button variant="outline" onClick={handleLogoutClick}>
                         Logout
                     </Button>
@@ -53,7 +58,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/lookup" element={<Lookup />} />
                     <Route path="/list" element={<MyList />} />
-                    <Route path="/profile" element={<MyProfile />} />
+                    <Route path="/profile" element={<MyProfile user={user} onUpdate={setUser} />} />
                     <Route path="/admin" element={<Admin />} />
                     <Route path="/*" element={<Error />} />
                 </Routes>

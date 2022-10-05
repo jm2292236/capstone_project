@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def show
         # user = User.find_by(id: 1)  # temporary to show the profile...
@@ -20,10 +22,25 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        user = User.find(params[:id])
+        user.update!(user_params)
+
+        render json: user
+    end
+
     private
 
     def user_params
         params.permit(:username, :password, :password_confirmation, :first_name, :last_name, :city_id, :admin)
+    end
+
+    def render_not_found_response
+        render json: {error: "Post not found"}, status: :not_found
+    end
+
+    def render_unprocessable_entity_response(invalid)
+        render json: {errors: invalid.record.errors.messages}, status: :unprocessable_entity
     end
 
 end
