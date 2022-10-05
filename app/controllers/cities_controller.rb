@@ -12,6 +12,13 @@ class CitiesController < ApplicationController
         render json: city, status: :created
     end
 
+    def update
+        city = City.find(params[:id])
+        city.update!(city_params)
+
+        render json: city
+    end
+
     def destroy
         city = City.find(params[:id])
         city.destroy

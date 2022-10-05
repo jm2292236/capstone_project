@@ -12,15 +12,27 @@ class PropertiesController < ApplicationController
         render json: property
     end
     
+    def create
+        property = Property.create!(property_params)
+        render json: property, status: :created
+    end
+
     def update
         property = Property.find(params[:id])
-        property.update(property_params)
+        property.update!(property_params)
+
+        render json: property
+    end    
+
+    def destroy
+        city = City.find(params[:id])
+        city.destroy
     end
 
     private
 
     def property_params
-        params.permit(:type_id, :address, :city_id, :zip_code, :beds, :baths, :year_built, :sq_ft, :lot_size, :foreclosure)
+        params.permit(:type_id, :address, :city_id, :zipcode, :beds, :baths, :year_built, :sq_ft, :lot_size, :foreclosure)
     end
 
     def record_not_found

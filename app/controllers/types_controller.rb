@@ -12,6 +12,13 @@ class TypesController < ApplicationController
         render json: type, status: :created
     end
 
+    def update
+        type = Type.find(params[:id])
+        type.update!(type_params)
+
+        render json: type
+    end
+
     def destroy
         type = Type.find(params[:id])
         type.destroy
