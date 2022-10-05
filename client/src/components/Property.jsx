@@ -6,7 +6,7 @@ function handleSeeDetails() {
     PropertyDetail()
 }
 
-function Property({userList, property}) {
+function Property({property}) {
     return (
         <div className='property-container'>
             <div className='property-top'>
@@ -24,13 +24,12 @@ function Property({userList, property}) {
                     <button onClick={handleSeeDetails}>See details</button>
                 </div>
             </div>
+            
             <div className='property-images'>
                 {property.property_images.map((ppty, key) => (
                     <img className='property-img' key={key} src={ppty.image_url} alt="Property"></img>
                 ))}
             </div>
-
-            {userList ? property.notes : ""}
         </div>
     )
 }

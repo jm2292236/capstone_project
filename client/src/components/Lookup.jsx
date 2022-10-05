@@ -25,9 +25,13 @@ function Lookup() {
 
     const propertiesToDisplay = properties.filter(property => {
         if (city === "All") {
-            return true;
+            if (foreclosure) {
+                return property.foreclosure
+            } else {
+                return true
+            }
         } else if (foreclosure) {
-            return property.city_id == city && property.foreclosure;
+            return property.city_id == city && property.foreclosure
         } else {
             return property.city_id == city
         }

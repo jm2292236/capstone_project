@@ -25,8 +25,8 @@ class PropertiesController < ApplicationController
     end    
 
     def destroy
-        city = City.find(params[:id])
-        city.destroy
+        property = Property.find(params[:id])
+        property.destroy
     end
 
     private
