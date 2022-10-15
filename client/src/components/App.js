@@ -14,7 +14,7 @@ import FAQList from "./FAQList";
 
 function App() {
     const [user, setUser] = useState(null);
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     useEffect(() => {
         // auto-login

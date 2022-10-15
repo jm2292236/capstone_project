@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import MembershipForm from './MembershipForm';
+import Membership from './Membership';
 
 function MembershipList() {
     const [memberships, setMemberships] = useState([])
@@ -19,7 +19,7 @@ function MembershipList() {
     return (
         <div>
             {memberships.map((membership) => (
-                <MembershipForm key={memberships.id} membership={membership}/>
+                <Membership key={memberships.id} membership={membership}/>
             ))}
         </div>
     )
