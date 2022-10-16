@@ -5,6 +5,8 @@ class CreateMemberships < ActiveRecord::Migration[7.0]
       t.boolean :billed_monthly
       t.boolean :nationwide_lookup
       t.boolean :owner_details
+      t.boolean :due_diligence
+      t.boolean :add_users
       t.float :price
 
       t.timestamps

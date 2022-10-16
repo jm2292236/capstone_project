@@ -26,6 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_05_110700) do
     t.boolean "billed_monthly"
     t.boolean "nationwide_lookup"
     t.boolean "owner_details"
+    t.boolean "due_diligence"
+    t.boolean "add_users"
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
