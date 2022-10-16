@@ -4,7 +4,7 @@ class CitiesController < ApplicationController
     
     def index
         cities = City.all
-        render json: cities, include: ["state"]
+        render json: cities
     end
     
     def create
@@ -27,7 +27,7 @@ class CitiesController < ApplicationController
     private
 
     def city_params
-        params.permit(:name, :state_id)
+        params.permit(:name, :state)
     end
 
     def render_not_found_response

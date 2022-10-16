@@ -21,64 +21,54 @@ condo = Type.create(description: "Condo")
 mobile = Type.create(description: "Mobile")
 
 # ========================================================================
-# States
-# ===================
-puts "States..."
-ca = State.create(name: "California", abbreviation: "CA")
-ny = State.create(name: "New York", abbreviation: "NY")
-fl = State.create(name: "Florida", abbreviation: "FL")
-oregon = State.create(name: "Oregon", abbreviation: "OR") # can't use "or"
-tx = State.create(name: "Texas", abbreviation: "TX")
-
-# ========================================================================
 # Cities
 # ======
 puts "Cities..."
 # California
-la =  City.create(name: "Los Angeles", state: ca)
-riverside =  City.create(name: "Riverside", state: ca)
-moreno_valley =  City.create(name: "Moreno Valley", state: ca)
-san_diego =  City.create(name: "San Diego", state: ca)
+la =  City.create(name: "Los Angeles", state: "CA")
+riverside =  City.create(name: "Riverside", state: "CA")
+moreno_valley =  City.create(name: "Moreno Valley", state: "CA")
+san_diego =  City.create(name: "San Diego", state: "CA")
 
 # New York
-ny =  City.create(name: "New York", state: ny)
+ny =  City.create(name: "New York", state: "NY")
 
 # Florida
-miami =  City.create(name: "Miami", state: fl)
+miami =  City.create(name: "Miami", state: "FL")
 
 # Oregon
-portland =  City.create(name: "Portland", state: oregon)
+portland =  City.create(name: "Portland", state: "OR")
 
 # Texas
-dallas =  City.create(name: "Dallas", state: tx)
-austin =  City.create(name: "Austin", state: tx)
+dallas =  City.create(name: "Dallas", state: "TX")
+austin =  City.create(name: "Austin", state: "TX")
 
 # ========================================================================
 # Properties
 # ==========
 puts "Properties..."
 p1 = Property.create(type: house, address: "25780 Rancho Lucero Dr", city: moreno_valley, zipcode: 92551, beds: 4, baths: 3, year_built: 1986, sq_ft: 1630, lot_size: 7405, foreclosure: false,
-    image_url: "https://ssl.cdn-redfin.com/photo/45/bigphoto/928/OC22191928_1.jpg")
+    image_url: "https://ssl.cdn-redfin.com/photo/45/bigphoto/928/OC22191928_1.jpg", notes: "Property probably going to foreclosure")
 p2 = Property.create(type: house, address: "115 E 88th Pl", city: la, zipcode: 92501, beds: 3, baths: 2, year_built: 1986, sq_ft: 1501, lot_size: 7405, foreclosure: true,
-    image_url: "https://ssl.cdn-redfin.com/photo/40/bigphoto/737/22-183737_0.jpg")
+    image_url: "https://ssl.cdn-redfin.com/photo/40/bigphoto/737/22-183737_0.jpg", notes: "Fixer upper")
 p3 = Property.create(type: house, address: "504 Montecito Dr", city: la, zipcode: 92502, beds: 4, baths: 3, year_built: 1986, sq_ft: 1502, lot_size: 7405, foreclosure: false,
-    image_url: "https://ssl.cdn-redfin.com/photo/45/bigphoto/996/GD22187996_0.jpg")
+    image_url: "https://ssl.cdn-redfin.com/photo/45/bigphoto/996/GD22187996_0.jpg", notes: "Owner living in the property")
 p4 = Property.create(type: house, address: "1040 W 71st St", city: la, zipcode: 92503, beds: 4, baths: 3, year_built: 1986, sq_ft: 1503, lot_size: 7405, foreclosure: false,
-    image_url: "https://ssl.cdn-redfin.com/photo/45/bigphoto/917/SB22189917_1.jpg")
+    image_url: "https://ssl.cdn-redfin.com/photo/45/bigphoto/917/SB22189917_1.jpg", notes: "Rented")
 p5 = Property.create(type: house, address: "1036 W 67th St", city: la, zipcode: 92504, beds: 4, baths: 3, year_built: 1986, sq_ft: 1504, lot_size: 7405, foreclosure: false,
-    image_url: "https://ssl.cdn-redfin.com/photo/41/bigphoto/311/SR22208311_0.jpg")
+    image_url: "https://ssl.cdn-redfin.com/photo/41/bigphoto/311/SR22208311_0.jpg", notes: "")
 p6c = Property.create(type: condo, address: "200 E Alessandro Blvd #70", city: riverside, zipcode: 92508, beds: 2, baths: 2.5, year_built: 1990, sq_ft: 930, lot_size: 3485, foreclosure: false,
-    image_url: "https://ssl.cdn-redfin.com/photo/45/bigphoto/460/IV22199460_0.jpg")
+    image_url: "https://ssl.cdn-redfin.com/photo/45/bigphoto/460/IV22199460_0.jpg", notes: "Searching for more details in public records")
 p7c = Property.create(type: condo, address: "200 E Alessandro Blvd #39", city: riverside, zipcode: 92508, beds: 2, baths: 2, year_built: 1990, sq_ft: 1068, lot_size: 3485, foreclosure: true,
-    image_url: "https://ssl.cdn-redfin.com/photo/45/bigphoto/579/IV22196579_1.jpg")
+    image_url: "https://ssl.cdn-redfin.com/photo/45/bigphoto/579/IV22196579_1.jpg", notes: "Verified property")
 p8c = Property.create(type: condo, address: "25890 Iris Ave Unit B", city: moreno_valley, zipcode: 92551, beds: 2, baths: 2, year_built: 1990, sq_ft: 1068, lot_size: 3485, foreclosure: true, 
-    image_url: "https://ssl.cdn-redfin.com/photo/45/bcsphoto/302/genBcs.IV22215302_1.jpg")
+    image_url: "https://ssl.cdn-redfin.com/photo/45/bcsphoto/302/genBcs.IV22215302_1.jpg", notes: "Owner willing to sell")
 
 p9mh = Property.create(type: mobile, address: "1803 Quanah Parker Trl", city: austin, zipcode: 78734, beds: 3, baths: 2, year_built: 1999, sq_ft: 1792, lot_size: 9060, foreclosure: true, 
-    image_url: "https://ssl.cdn-redfin.com/photo/92/bcsphoto/575/genBcs.6914575_0.jpg")
+    image_url: "https://ssl.cdn-redfin.com/photo/92/bcsphoto/575/genBcs.6914575_0.jpg", notes: "")
 
 p10c = Property.create(type: condo, address: "60 E 55th St Unit 40-B", city: ny, zipcode: 10022, beds: 2, baths: 2, year_built: 2004, sq_ft: 1272, lot_size: 8636, foreclosure: false, 
-    image_url: "https://ssl.cdn-redfin.com/photo/211/bcsphoto/328/genBcs.OLRS-0001298328_0.jpg")
+    image_url: "https://ssl.cdn-redfin.com/photo/211/bcsphoto/328/genBcs.OLRS-0001298328_0.jpg", notes: "Has a basement built")
 
 # ========================================================================
 # Property Images

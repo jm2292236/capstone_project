@@ -6,8 +6,7 @@ Rails.application.routes.draw do
     
     resources :users
     resources :types
-    resources :states
-    resources :cities
+      resources :cities
     
     resources :properties
     resources :owners

@@ -12,6 +12,7 @@ class CreateProperties < ActiveRecord::Migration[7.0]
       t.integer :lot_size
       t.boolean :foreclosure
       t.string :image_url
+      t.string :notes
 
       t.timestamps
     end
