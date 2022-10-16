@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Flex, Box } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
 function Filter({ foreclosure, handleChangeFC, city, handleChangeCity }) {
     const [cities, setCities] = useState([])

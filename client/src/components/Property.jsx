@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaBed, FaBath } from 'react-icons/fa';
 import { BsGridFill } from 'react-icons/bs';
 import millify from 'millify';
@@ -14,13 +14,10 @@ import {
     ModalCloseButton,
 } from '@chakra-ui/react'
 
-import PropertyDetail from './PropertyDetail'
-
 function Property({ property }) {
-    // const { isOpen, onOpen, onClose } = useDisclosure()
     const modalImages = useDisclosure()
     const modalOwner = useDisclosure()
-    const [scrollBehavior, setScrollBehavior] = React.useState('inside')
+    const [scrollBehavior, setScrollBehavior] = useState('inside')
 
     const btnRef = React.useRef(null)
 
@@ -68,8 +65,8 @@ function Property({ property }) {
                     <ModalCloseButton />
                     <ModalBody>
                         {property.property_images.map((image, key) => (
-                            <Box p='3'>
-                                <img key={key} src={image.image_url} alt="Property" width="400" height="260"></img>
+                            <Box key={key} p='3'>
+                                <img src={image.image_url} alt="Property" width="400" height="260"></img>
                             </Box>
                         ))}
                     </ModalBody>
@@ -92,8 +89,12 @@ function Property({ property }) {
                     <ModalCloseButton />
                     <ModalBody>
                         {property.property_owners.map((owner, key) => (
-                            <Box key={key} p='3'>
-                                <Text>{owner.owner.full_name}</Text>
+                            <Box key={owner.owner.id} p='3' bg='gray.100' border='solid'>
+                                <Text fontWeight='bold'>{owner.owner.full_name}</Text>
+                                <Text>{owner.owner.address}</Text>
+                                <Text>{owner.owner.city.name} {owner.owner.city.state}</Text>
+                                <Text color='blue.400' fontWeight='bold'>{owner.owner.phone}</Text>
+                                <Text color='blue.400' fontWeight='bold'>{owner.owner.email}</Text>
                             </Box>
                         ))}
                     </ModalBody>

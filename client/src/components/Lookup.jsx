@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Flex, Box } from '@chakra-ui/react';
+import { Flex, Box, Text } from '@chakra-ui/react';
 
 import Filter from './Filter';
 import Property from './Property';
@@ -47,14 +47,12 @@ function Lookup() {
             />
 
             <Flex flexWrap='wrap' gap='5'>
-                {properties.length > 0 ? (
+                {properties.length ? (
                     propertiesToDisplay.map((property) => (
                         <Property key={property.id} property={property}/>
                     ))
                 ) : 
-                    <>
-                        <h2>Data not Found</h2>
-                    </>
+                    <Text>Data not Found</Text>
                 }        
             </Flex>
         </Box>

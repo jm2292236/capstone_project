@@ -4,12 +4,14 @@ class PropertiesController < ApplicationController
 
     def index
         properties = Property.all
-        render json: properties, include: ['type', 'city', 'property_images', 'property_sales', 'property_owners', 'property_owners.owner']
-    end
-
+        render json: properties, 
+            include: ['type', 'city', 'property_images', 'property_sales', 'property_owners', 'property_owners.owner', 'property_owners.owner.city']
+        end
+        
     def show
         property = Property.find(params[:id])
-        render json: property
+        render json: property,
+            include: ['type', 'city', 'property_images', 'property_sales', 'property_owners', 'property_owners.owner', 'property_owners.owner.city']
     end
     
     def create
