@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
 
     def index
         properties = Property.all
-        render json: properties
+        render json: properties, include: ['type', 'city', 'property_images', 'property_sales', 'property_owners', 'property_owners.owner']
     end
 
     def show

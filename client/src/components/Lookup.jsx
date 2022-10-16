@@ -46,7 +46,7 @@ function Lookup() {
                 city={city} handleChangeCity={setCity}
             />
 
-            <Flex flexWrap='wrap'>
+            <Flex flexWrap='wrap' gap='5'>
                 {properties.length > 0 ? (
                     propertiesToDisplay.map((property) => (
                         <Property key={property.id} property={property}/>
