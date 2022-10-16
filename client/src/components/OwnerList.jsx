@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import { Heading, Divider, Flex, Box } from '@chakra-ui/react';
+
 import Owner from './Owner';
-import { Heading, Divider, Flex, Box, Text } from '@chakra-ui/react';
 
 function OwnerList() {
     const [owners, setOwners] = useState([])
 
     useEffect(() => {
         getOwners()
-    }, []);    
+    }, []);
     
     async function getOwners() {
         const resp = await fetch("/owners")
@@ -19,12 +20,12 @@ function OwnerList() {
 
     return (
         <>
-        <Box w='full'>
-            <Heading>_Owners_</Heading>
-        </Box>
+        <Flex mb='6' justifyContent='center'>
+            <Heading>Owners</Heading>
+        </Flex>
         <Divider />
 
-        <Flex flexWrap='wrap'>
+        <Flex flexWrap='wrap' gap='5'>
             {owners.map(owner => (
                 <Owner key={owner.id} owner={owner} />
             ))}

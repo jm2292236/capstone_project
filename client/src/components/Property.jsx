@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { FaBed, FaBath } from 'react-icons/fa';
 import { BsGridFill } from 'react-icons/bs';
 import millify from 'millify';
@@ -19,7 +19,7 @@ function Property({ property }) {
     const modalOwner = useDisclosure()
     const [scrollBehavior, setScrollBehavior] = useState('inside')
 
-    const btnRef = React.useRef(null)
+    const btnRef = useRef(null)
 
     return (
         <Flex flexWrap='wrap' w='420px' p='3' paddingTop='0px' justifyContent='flex-start'>
@@ -89,7 +89,7 @@ function Property({ property }) {
                     <ModalCloseButton />
                     <ModalBody>
                         {property.property_owners.map((owner, key) => (
-                            <Box key={owner.owner.id} p='3' bg='gray.100' border='solid'>
+                            <Box key={owner.owner.id} p='3' bg='gray.100'>
                                 <Text fontWeight='bold'>{owner.owner.full_name}</Text>
                                 <Text>{owner.owner.address}</Text>
                                 <Text>{owner.owner.city.name} {owner.owner.city.state}</Text>
