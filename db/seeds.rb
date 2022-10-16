@@ -120,9 +120,15 @@ PropertyImage.create(property_id: p10c.id, image_url: "https://ssl.cdn-redfin.co
 # Owners
 # ======
 puts "Owners..."
-john_smith = Owner.create(first_name: "John", last_name: "Smith", address: "12345 Main st", city: la, zipcode: 90210, phone: "3231234567", email: "jsmith@gmail.com")
-jane_doe = Owner.create(first_name: "Jane", last_name: "Doe", address: "22300 Lincoln st", city: riverside, zipcode: 92551, phone: "9513658987", email: "jdoe@gmail.com")
-william_bate = Owner.create(first_name: "William", last_name: "Bate", address: "11234", city: riverside, zipcode: 92551, phone: "9513332258", email: "wbate@gmail.com")
+john_smith = Owner.create(first_name: "John", last_name: "Smith", address: "12345 Main St", city: la, zipcode: 90210, phone: "(323) 123-4567", email: "jsmith@gmail.com")
+jane_doe = Owner.create(first_name: "Jane", last_name: "Doe", address: "22300 Lincoln St", city: riverside, zipcode: 92551, phone: "(951) 365-8987", email: "jdoe@gmail.com")
+william_bate = Owner.create(first_name: "William", last_name: "Bate", address: "11234 Willow St", city: riverside, zipcode: 92551, phone: "(951) 333-2258", email: "wbate@gmail.com")
+louise_grammer = Owner.create(first_name: "Louise", last_name: "Grammer", address: "33600 Front St", city: san_diego, zipcode: 98500, phone: "(631) 516-1234", email: "lgrammer@yahoo.com")
+peter_graham = Owner.create(first_name: "Peter", last_name: "Graham", address: "22110 Green Mile Ct", city: Austin, zipcode: 93503, phone: "(202) 555-0362", email: "pgraham@live.com")
+dan_pirlo = Owner.create(first_name: "Dan", last_name: "Pirlo", address: "33600 Azucena Ave", city: dallas, zipcode: 93123, phone: "(202) 555-0545", email: "dpir234@aol.com")
+brian_chang = Owner.create(first_name: "Brian", last_name: "Chang", address: "14525 Frederick St", city: moreno_valley, zipcode: 92503, phone: "(202) 555-0401", email: "survivor@gmc.com")
+jorge_gutierrez = Owner.create(first_name: "Jorge", last_name: "Gutierrez", address: "12741 Eucalyptus Ave", city: la, zipcode: 92555, phone: "(202) 555-0807", email: "guti1980@yahoo.com")
+elizabeth_salas = Owner.create(first_name: "Elizabeth", last_name: "Salas", address: "25700 Suffolk Rd", city: portland, zipcode: 88503, phone: "(202) 555-0669", email: "esal84@nba.com")
 
 # ========================================================================
 # Property Owners
@@ -137,6 +143,13 @@ PropertyOwner.create(property_id: p1.id, owner_id: jane_doe.id)
 PropertyOwner.create(property_id: p2.id, owner_id: william_bate.id)
 PropertyOwner.create(property_id: p3.id, owner_id: william_bate.id)
 PropertyOwner.create(property_id: p4.id, owner_id: william_bate.id)
+
+PropertyOwner.create(property_id: p5.id, owner_id: louise_grammer.id)
+PropertyOwner.create(property_id: p6c.id, owner_id: peter_graham.id)
+PropertyOwner.create(property_id: p7c.id, owner_id: dan_pirlo.id)
+PropertyOwner.create(property_id: p8c.id, owner_id: brian_chang.id)
+PropertyOwner.create(property_id: p9mh.id, owner_id: jorge_gutierrez.id)
+PropertyOwner.create(property_id: p10c.id, owner_id: elizabeth_salas.id)
 
 # ========================================================================
 # Property Sales
@@ -157,9 +170,9 @@ UserProperty.create(property_id: 3, user_id: 4, notes: "Owner recently moved out
 # Memberships
 # ===============
 puts "Memberships..."
-Membership.create(description: "Essential", billed_monthly: true, nationwide_lookup: true, owner_details: false, price: 30)
-Membership.create(description: "Annual", billed_monthly: false, nationwide_lookup: true, owner_details: false, price: 300)
-Membership.create(description: "Complete", billed_monthly: true, nationwide_lookup: true, owner_details: true, price: 50)
+Membership.create(description: "Free", billed_monthly: true, nationwide_lookup: true, owner_details: false, due_diligence: false, add_users: false, price: 0)
+Membership.create(description: "Essential", billed_monthly: true, nationwide_lookup: true, owner_details: true, due_diligence: false, add_users: false, price: 30)
+Membership.create(description: "Complete", billed_monthly: false, nationwide_lookup: true, owner_details: true, due_diligence: true, add_users: true, price: 50)
 
 # ================================================
 puts "Seeding Finished!"

@@ -32,7 +32,7 @@ class PropertiesController < ApplicationController
     private
 
     def property_params
-        params.permit(:type_id, :address, :city_id, :zipcode, :beds, :baths, :year_built, :sq_ft, :lot_size, :foreclosure)
+        params.permit(:type_id, :address, :city_id, :zipcode, :beds, :baths, :year_built, :sq_ft, :lot_size, :foreclosure, :image_url, :notes)
     end
 
     def record_not_found

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Flex, Box } from '@chakra-ui/react';
 
 function Filter({ foreclosure, handleChangeFC, city, handleChangeCity }) {
     const [cities, setCities] = useState([])
@@ -15,8 +16,8 @@ function Filter({ foreclosure, handleChangeFC, city, handleChangeCity }) {
         }
     }
     return (
-        <div className='filter-container'>
-            <div>
+        <Flex alignItems='center' p='6' justifyContent='space-around'>
+        <div>
                 <label htmlFor="city">Select city:</label>
                 <select className="select-city" name="city" value={city} onChange={(e) => handleChangeCity(e.target.value)}>
                     <option>All</option>
@@ -30,7 +31,7 @@ function Filter({ foreclosure, handleChangeFC, city, handleChangeCity }) {
                 <input type="checkbox" checked={foreclosure} onChange={handleChangeFC}/>
                 Foreclosures Only
             </label>
-        </div>
+        </Flex>
     )
 }
 

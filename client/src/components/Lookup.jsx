@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Flex, Box } from '@chakra-ui/react';
+
 import Filter from './Filter';
 import Property from './Property';
 
@@ -38,22 +40,24 @@ function Lookup() {
     });
 
     return (
-        <div className='content'>
+        <Box>
             <Filter 
                 foreclosure={foreclosure} handleChangeFC={handleChangeFC}
                 city={city} handleChangeCity={setCity}
             />
 
-            {properties.length > 0 ? (
-                propertiesToDisplay.map((property) => (
-                    <Property key={property.id} property={property}/>
-                ))
-            ) : 
-                <>
-                    <h2>Data not Found</h2>
-                </>
-            }        
-        </div>
+            <Flex flexWrap='wrap'>
+                {properties.length > 0 ? (
+                    propertiesToDisplay.map((property) => (
+                        <Property key={property.id} property={property}/>
+                    ))
+                ) : 
+                    <>
+                        <h2>Data not Found</h2>
+                    </>
+                }        
+            </Flex>
+        </Box>
     )
 }
 

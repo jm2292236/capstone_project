@@ -26,7 +26,7 @@ The app uses a **PostgreSQL** database to save and get the data and the database
 Entity Relationship Diagram:
 [(https://lucid.app/lucidchart/09fdec3d-ad3c-4179-b97f-4472c90f45b6/edit?page=0_0&invitationId=inv_483c3bb2-7b63-4b63-8e56-96990436ef80#)]
 
-As it can be seen in the diagram, the main model is **_Property_** who can have many images associated with it as well as the sale history. It is also associated with the **_city_** where the property is located and has a **_type_** to categorize it (i. e.: House, Condo, etc). The property can also have one or many **_Owners_** as well as an Owner can have more than one property. This is a **_many-to-many_** relationship between these two models made possible by the _PropertyOwner_ table seen in the diagram. Additionally, there is another many-to-many relationship between a **_user_** and the property models defined by the **_UserProperty_** table. This is planned for a future upgrade of the app where the user can add a property to her/his personal portfolio for further research.
+As it can be seen in the diagram, the main model is **_Property_** who can have many images associated with it as well as the sale history. It is also associated with the **_city_** where the property is located and has a **_type_** to categorize it (i. e.: House, Condo, etc). The property can also have one or many **_Owners_** as well as an Owner can have more than one property. This is a **_many-to-many_** relationship between these two models made possible by the **_PropertyOwner_** table seen in the diagram. Additionally, there is another many-to-many relationship between a **_user_** and the property models defined by the **_UserProperty_** table. This is planned for a future upgrade of the app where the user can add a property to her/his personal portfolio for further research.
 
 The app has a password protection and authentication method implemented, therefore, for the user to be able to use the app they need to login/signup first.
 
@@ -37,4 +37,4 @@ To run this app locally:
 * PostgreSQL server must be running
 * Inside the directory open a terminal window
 * For the backend, run: **_bundle install_**, **_rails db:create_**, **_rails db:migrate_**, **_rails db:seed_** and **_rails s_**
-* For the frontend, open a new terminal window, **_cd into the client directory_** and run **_npm install_** followed by **_npm start_**
+* For the frontend, open a new terminal window, **_cd into the client directory_** and run **_npm install_** followed by **_npm start_**.
