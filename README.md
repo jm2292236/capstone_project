@@ -30,7 +30,7 @@ As it can be seen in the diagram, the main model is **_Property_** who can have 
 
 The app has a password protection and authentication method implemented, therefore, for the user to be able to use the app they need to login/signup first.
 
-Currently deployed at this link: **[(https://fathomless-wave-00182.herokuapp.com/)]**
+Currently deployed at this link: **[(https://propertyfinder22.herokuapp.com/)]**
 
 To run this app locally:
 * Fork this repository
