@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Heading, Divider, Flex, Box } from '@chakra-ui/react';
+import { Heading, Divider, Flex } from '@chakra-ui/react';
 
 import Owner from './Owner';
 

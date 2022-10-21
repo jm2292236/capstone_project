@@ -6,11 +6,11 @@ import { Button } from "../styles";
 import Admin from "./Admin";
 import Lookup from "./Lookup";
 import MyProfile from "./MyProfile";
-import Error from "./Error";
 import Login from "./Login";
 import Pricing from "./Pricing";
 import OwnerList from "./OwnerList";
 import FAQList from "./FAQList";
+import Default from "./Default";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -63,7 +63,7 @@ function App() {
                 <Route path="/faq" element={<FAQList />} />
                 <Route path="/profile" element={<MyProfile user={user} onUpdate={setUser} />} />
                 <Route path="/admin" element={<Admin />} />
-                <Route path="/*" element={<Error />} />
+                <Route path="/*" element={<Default />} />
             </Routes>
         </div>
     );

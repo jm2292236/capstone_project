@@ -27,7 +27,7 @@ class MembershipsController < ApplicationController
     private
 
     def membership_params
-        params.permit(:description, :billed_monthly, :nationwide_lookup, :owner_details, :price)
+        params.permit(:description, :billed_monthly, :nationwide_lookup, :owner_details, :due_diligence, :add_users, :price)
     end
 
     def render_not_found_response

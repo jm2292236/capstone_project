@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     
     resources :properties
     resources :owners
-    resources :user_properties
     
     resources :memberships
+    resources :faqs
     
     # users controller
     get "/me", to: "users#show"

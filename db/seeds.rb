@@ -28,7 +28,6 @@ puts "Cities..."
 la =  City.create(name: "Los Angeles", state: "CA")
 riverside =  City.create(name: "Riverside", state: "CA")
 moreno_valley =  City.create(name: "Moreno Valley", state: "CA")
-san_diego =  City.create(name: "San Diego", state: "CA")
 
 # New York
 ny =  City.create(name: "New York", state: "NY")
@@ -36,11 +35,7 @@ ny =  City.create(name: "New York", state: "NY")
 # Florida
 miami =  City.create(name: "Miami", state: "FL")
 
-# Oregon
-portland =  City.create(name: "Portland", state: "OR")
-
 # Texas
-dallas =  City.create(name: "Dallas", state: "TX")
 austin =  City.create(name: "Austin", state: "TX")
 
 # ========================================================================
@@ -123,12 +118,12 @@ puts "Owners..."
 john_smith = Owner.create(first_name: "John", last_name: "Smith", address: "12345 Main St", city: la, zipcode: 90210, phone: "(323) 123-4567", email: "jsmith@gmail.com")
 jane_doe = Owner.create(first_name: "Jane", last_name: "Doe", address: "22300 Lincoln St", city: riverside, zipcode: 92551, phone: "(951) 365-8987", email: "jdoe@gmail.com")
 william_bate = Owner.create(first_name: "William", last_name: "Bate", address: "11234 Willow St", city: riverside, zipcode: 92551, phone: "(951) 333-2258", email: "wbate@gmail.com")
-louise_grammer = Owner.create(first_name: "Louise", last_name: "Grammer", address: "33600 Front St", city: san_diego, zipcode: 98500, phone: "(631) 516-1234", email: "lgrammer@yahoo.com")
+louise_grammer = Owner.create(first_name: "Louise", last_name: "Grammer", address: "33600 Front St", city: miami, zipcode: 98500, phone: "(631) 516-1234", email: "lgrammer@yahoo.com")
 peter_graham = Owner.create(first_name: "Peter", last_name: "Graham", address: "22110 Green Mile Ct", city: austin, zipcode: 93503, phone: "(202) 555-0362", email: "pgraham@live.com")
-dan_pirlo = Owner.create(first_name: "Dan", last_name: "Pirlo", address: "33600 Azucena Ave", city: dallas, zipcode: 93123, phone: "(202) 555-0545", email: "dpir234@aol.com")
+dan_pirlo = Owner.create(first_name: "Dan", last_name: "Pirlo", address: "33600 Azucena Ave", city: ny, zipcode: 93123, phone: "(202) 555-0545", email: "dpir234@aol.com")
 brian_chang = Owner.create(first_name: "Brian", last_name: "Chang", address: "14525 Frederick St", city: moreno_valley, zipcode: 92503, phone: "(202) 555-0401", email: "survivor@gmc.com")
 jorge_gutierrez = Owner.create(first_name: "Jorge", last_name: "Gutierrez", address: "12741 Eucalyptus Ave", city: la, zipcode: 92555, phone: "(202) 555-0807", email: "guti1980@yahoo.com")
-elizabeth_salas = Owner.create(first_name: "Elizabeth", last_name: "Salas", address: "25700 Suffolk Rd", city: portland, zipcode: 88503, phone: "(202) 555-0669", email: "esal84@nba.com")
+elizabeth_salas = Owner.create(first_name: "Elizabeth", last_name: "Salas", address: "25700 Suffolk Rd", city: austin, zipcode: 88503, phone: "(202) 555-0669", email: "esal84@nba.com")
 
 # ========================================================================
 # Property Owners
@@ -167,12 +162,16 @@ UserProperty.create(property_id: 5, user_id: 2, notes: "Probably an easy deal!")
 UserProperty.create(property_id: 3, user_id: 4, notes: "Owner recently moved out, probably they want to sell")
 
 # ========================================================================
-# Memberships
+# FAQs
 # ===============
-puts "Memberships..."
-Membership.create(description: "Free", billed_monthly: true, nationwide_lookup: true, owner_details: false, due_diligence: false, add_users: false, price: 0)
-Membership.create(description: "Essential", billed_monthly: true, nationwide_lookup: true, owner_details: true, due_diligence: false, add_users: false, price: 30)
-Membership.create(description: "Complete", billed_monthly: false, nationwide_lookup: true, owner_details: true, due_diligence: true, add_users: true, price: 50)
+puts "FAQs..."
+Faq.create(question: "How does the Free Trial work?", response: "Simply sign up and your 3-Day Free Trial will begin automatically. To continue after the trial, do nothing – we’ll charge your card at the end of the trial and your subscription will continue uninterrupted.")
+Faq.create(question: "Which states and counties does Property Finder cover?", response: "Property Finder provides nationwide coverage. Property Finder Coverage shows the specific counties we cover in each state, as well as other details about the specific data offered in each location.")
+Faq.create(question: "Can I cancel anytime?", response: "Absolutely. After you cancel you will receive an email confirmation, please keep this email as proof of your cancellation.")
+Faq.create(question: "Can I change my subscription plan anytime?", response: "Absolutely! You can change your subscription to a plan that best meets your needs anytime.")
+Faq.create(question: "Do you offer discounts on subscription fees?", response: "Yes! Depending on the package you can save roughly 20% with an annual term plan when paid in full & upfront. You can start monthly and switch to an annual payment plan at any time.")
+Faq.create(question: "When will I get billed?", response: "If you do not cancel during your trial your credit card will be charged after 3 days.")
+Faq.create(question: "What if I no longer have access to the email I have used with my previous subscription?", response: "Please contact Support and we’ll help you get reconnected to your former account.")
 
 # ================================================
 puts "Seeding Finished!"
