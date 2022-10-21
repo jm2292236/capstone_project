@@ -1,48 +1,40 @@
 import React, { useState } from 'react'
 import { Button } from '../styles'
-import MembershipList from './MembershipList';
+import { Flex, Text, Heading, Divider } from '@chakra-ui/react';
+
+import MembershipAdmin from './MembershipAdmin';
+import TypeAdmin from './TypeAdmin';
+import CityAdmin from './CityAdmin';
+import FaqAdmin from './FaqAdmin';
+import OwnerAdmin from './OwnerAdmin';
+import PropertyAdmin from './PropertyAdmin';
 
 function Admin() {
-    const [membershipShown, setMembershipShown] = useState(true);
-    const [ownerShown, setOwnerShown] = useState(false);
-    const [typeShown, setTypeShown] = useState(false);
-    const [cityShown, setCityShown] = useState(false);
-    const [propertyShown, setPropertyShown] = useState(false);
+    const [modelShown, setModelShown] = useState("faq")
 
-    const handleMembershipClick = event => {
-        // setMembershipShown(current => !current);
-        console.log(event)
-        setMembershipShown(true);
-        setTypeShown(false)
-        setCityShown(false)
-        setOwnerShown(false)
-        setPropertyShown(false)
-    };
-    
-    const handleTypeClick = event => {
-        console.log(event.target)
-        setMembershipShown(false);
-        setTypeShown(true)
-        setCityShown(false)
-        setOwnerShown(false)
-        setPropertyShown(false)
-      };
-      
-      return (
+    return (
         <div className='content'>
+            <Flex mb='6' justifyContent='center'>
+                <Heading>Admin</Heading>
+                <Text>(available only if you logged in as Admin)</Text>
+            </Flex>
+            <Divider />
+
             <div className='admin-navbar'>
-                <Button onClick={handleMembershipClick}>Memberships</Button>
-                <Button onClick={handleTypeClick}>Types</Button>
-                <Button>Cities</Button>
-                <Button>Owners</Button>
-                <Button>Properties</Button>
+                <Button onClick={() => setModelShown('faq')}>FAQ</Button>
+                {/* <Button onClick={() => setModelShown('membership')}>Membership</Button> */}
+                <Button onClick={() => setModelShown('type')}>Types</Button>
+                <Button onClick={() => setModelShown('city')}>Cities</Button>
+                <Button onClick={() => setModelShown('owner')}>Owners</Button>
+                <Button onClick={() => setModelShown('property')}>Properties</Button>
             </div>
 
-            {membershipShown && <MembershipList />}
-            {typeShown && <h2>Types lists</h2>}
-            {cityShown && <h2>Cities lists</h2>}
-            {ownerShown && <h2>Owners lists</h2>}
-            {propertyShown && <h2>Properties lists</h2>}
+            {modelShown === "faq" && <FaqAdmin />}
+            {modelShown === "membership" && <MembershipAdmin />}
+            {modelShown === "type" && <TypeAdmin />}
+            {modelShown === "city" && <CityAdmin />}
+            {modelShown === "owner" && <OwnerAdmin />}
+            {modelShown === "property" && <PropertyAdmin />}
         </div>
     )
 }

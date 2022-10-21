@@ -20,6 +20,10 @@ function Login({ onLogin }) {
                 Sign Up
                 </Button>
             </p>
+            <h6>---</h6>
+            <h6>For demo purposes, username: Admin, password: Admin300#</h6>
+            <h6>If you want to use the Admin user</h6>
+            <h6>---</h6>
             </>
         ) : (
             <>

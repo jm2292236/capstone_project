@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Flex, Box, Text } from '@chakra-ui/react';
+import { Flex, Box, Text, Heading, Divider } from '@chakra-ui/react';
 
 import Filter from './Filter';
 import Property from './Property';
@@ -41,6 +41,11 @@ function Lookup() {
 
     return (
         <Box>
+            <Flex mb='6' justifyContent='center'>
+                <Heading>Properties</Heading>
+            </Flex>
+            <Divider />
+
             <Filter 
                 foreclosure={foreclosure} handleChangeFC={handleChangeFC}
                 city={city} handleChangeCity={setCity}

@@ -43,7 +43,7 @@ function App() {
 
                 <Link to="/home">Properties</Link>
                 <Link to="/owners">Owners</Link>
-                <Link to="/pricing">Pricing</Link>
+                {/* <Link to="/pricing">Pricing</Link> */}
                 <Link to="/faq">FAQ</Link>
                 <Link to="/profile">My Profile</Link>
                 {user.admin ? 
@@ -59,7 +59,7 @@ function App() {
             <Routes>
                 <Route path="/home" element={<Lookup />} />
                 <Route path="/owners" element={<OwnerList />} />
-                <Route path="/pricing" element={<Pricing />} />
+                {/* <Route path="/pricing" element={<Pricing />} /> */}
                 <Route path="/faq" element={<FAQList />} />
                 <Route path="/profile" element={<MyProfile user={user} onUpdate={setUser} />} />
                 <Route path="/admin" element={<Admin />} />

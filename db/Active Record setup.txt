@@ -34,13 +34,3 @@ rails g resource faq question response --no-test-framework
 
 ====================================
 rails g resource --no-test-framework
-
-
-- Properties
-============
-115 E 88th Pl, Los Angeles, CA 90003
-504 Montecito Dr, Los Angeles, CA 90031
-1040 W 71st St, Los Angeles, CA 90044
-1036 W 67th St, Los Angeles, CA 90044
-6661 Delco Ave, Winnetka, CA 91306
-

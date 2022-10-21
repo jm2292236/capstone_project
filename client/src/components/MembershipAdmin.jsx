@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Membership from './Membership';
+import { Flex, Box, Text, Button, Divider } from '@chakra-ui/react';
 
-function MembershipList() {
+function MembershipAdmin() {
     const [memberships, setMemberships] = useState([])
 
     useEffect(() => {
@@ -18,11 +18,18 @@ function MembershipList() {
 
     return (
         <div>
+            <Flex mb='6' justifyContent='center'>
+            <Text fontWeight='bold' mt='5'>Editing Memberships</Text>
+            </Flex>
+            <Divider />
+
             {memberships.map((membership) => (
-                <Membership key={memberships.id} membership={membership}/>
+                <Flex key={membership.id}>
+                    <Text>{membership.description}</Text>
+                </Flex>
             ))}
         </div>
     )
 }
 
-export default MembershipList
+export default MembershipAdmin

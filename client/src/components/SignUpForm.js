@@ -15,6 +15,7 @@ function SignUpForm({ onLogin }) {
         setErrors([]);
         setIsLoading(true);
 
+        // For demo purposes
         let admin = false
         if (username === "Admin") {
             admin = true
