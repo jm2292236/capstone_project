@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 import { Flex, Box, Text, Button, Divider, Spacer } from '@chakra-ui/react';
 import FaqForm from './FaqForm';
+
+export const faqContext = createContext()
 
 function FaqAdmin() {
     const [faqs, setFaqs] = useState([])
@@ -19,6 +21,7 @@ function FaqAdmin() {
     }
 
     return (
+        <faqContext.Provider value={{faqs, setFaqs, formShown, setFormShown}}>
         <div>
             <Flex mb='6' justifyContent='center'>
                 <Text fontWeight='bold' mt='5'>Editing FAQs</Text>
@@ -43,6 +46,7 @@ function FaqAdmin() {
                 </Flex>
             ))}
         </div>
+        </faqContext.Provider>
     )
 }
 

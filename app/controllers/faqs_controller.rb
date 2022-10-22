@@ -27,11 +27,11 @@ class FaqsController < ApplicationController
     private
 
     def faq_params
-        faq.permit(:question, :response)
+        params.permit(:question, :response)
     end
 
     def render_not_found_response
-        render json: {error: "Membership not found"}, status: :not_found
+        render json: {error: "FAQ not found"}, status: :not_found
     end
 
     def render_unprocessable_entity_response(invalid)
